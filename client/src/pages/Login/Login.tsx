@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Jumbotron } from "react-bootstrap";
-import { LoginForm } from "../../containers";
+import { LoginForm, PasswordReset } from "../../containers";
 
 import "./Login.scss";
 
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [toggleLogin, setToggleLogin] = useState<boolean>(true);
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -27,12 +28,17 @@ const Login = () => {
   return (
     <div className="loginPage bg-info">
       <Jumbotron className="loginPage__form">
-        <LoginForm
-          onSubmit={onSubmitHandler}
-          onChange={onChangeHandler}
-          email={email}
-          password={password}
-        />
+        {toggleLogin ? (
+          <LoginForm
+            onSubmit={onSubmitHandler}
+            onChange={onChangeHandler}
+            email={email}
+            password={password}
+            forgotPassword={setToggleLogin}
+          />
+        ) : (
+          <PasswordReset forgotPassword={setToggleLogin} />
+        )}
       </Jumbotron>
     </div>
   );

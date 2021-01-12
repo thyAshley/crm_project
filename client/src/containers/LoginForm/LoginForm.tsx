@@ -6,6 +6,7 @@ import { LoginFormAttribute } from "./LoginForm.types";
 const LoginForm: React.FC<LoginFormAttribute> = ({
   onChange,
   onSubmit,
+  forgotPassword,
   email,
   password,
 }) => {
@@ -13,7 +14,7 @@ const LoginForm: React.FC<LoginFormAttribute> = ({
     <Container>
       <Row>
         <Col>
-          <h1 className="text-info text-center">Client Login</h1>
+          <h1 className="text-info text-center">Login</h1>
           <hr />
           <Form onSubmit={onSubmit}>
             <Form.Group>
@@ -44,7 +45,9 @@ const LoginForm: React.FC<LoginFormAttribute> = ({
       </Row>
       <Row>
         <Col>
-          <a href="#!">Forget Password?</a>
+          <a href="#!" onClick={() => forgotPassword((prev) => !prev)}>
+            Forget Password?
+          </a>
         </Col>
       </Row>
     </Container>
