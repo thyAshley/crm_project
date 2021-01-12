@@ -22,7 +22,7 @@ const LoginForm: React.FC<LoginFormAttribute> = ({
               <Form.Control
                 type="email"
                 name="email"
-                placeholder="Enter Email..."
+                placeholder="Enter Email"
                 required
                 onChange={onChange}
                 value={email}
@@ -33,7 +33,7 @@ const LoginForm: React.FC<LoginFormAttribute> = ({
               <Form.Control
                 type="password"
                 name="password"
-                placeholder="Enter Password..."
+                placeholder="Enter Password"
                 required
                 onChange={onChange}
                 value={password}
