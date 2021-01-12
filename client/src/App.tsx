@@ -2,8 +2,14 @@ import React from "react";
 
 import "./App.scss";
 
+import { Home } from "./pages";
+
 function App() {
-  return <div className="App">Hello World</div>;
+  return (
+    <div className="App">
+      <Home />
+    </div>
+  );
 }
 
 export default App;
